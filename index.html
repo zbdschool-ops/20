@@ -196,7 +196,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .accordion-icon{font-size:20px;transition:transform .3s}
 .accordion-item.active .accordion-icon{transform:rotate(180deg)}
 .accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
-.accordion-item.active .accordion-content{max-height:800px}
+.accordion-item.active .accordion-content{max-height:1200px}
 .accordion-body{padding:16px 20px;border-top:2px solid var(--border)}
 .tf-container{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
 .tf-card{background:#fff;border-radius:12px;padding:20px;border:2px solid var(--border);text-align:center;transition:all .3s;cursor:pointer}
@@ -231,6 +231,9 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .bar-info{background:linear-gradient(90deg,#3b82f6,#2563eb)}
 .bar-success{background:linear-gradient(90deg,#22c55e,#16a34a)}
 .bar-purple{background:linear-gradient(90deg,#a855f7,#7c3aed)}
+.group-block{background:linear-gradient(135deg,#f8fafc,#f1f5f9);border:2px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px}
+.group-block h4{color:var(--primary);font-size:17px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.group-hint{font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:12px}
 @media(max-width:968px){
 .hero-unified{grid-template-columns:1fr}
 .hero-illustration{border-bottom:2px dashed var(--accent);min-height:300px}
@@ -273,7 +276,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="top-progress-bar"><div class="top-progress-fill" id="topProgressBar"></div></div>
 <div class="progress-widget" id="progressWidget" onclick="showProgressModal()" tabindex="0" role="button" aria-label="Прогрес">
 <div class="progress-widget-header"><span class="progress-widget-title">Прогрес</span><span class="progress-widget-percentage" id="widgetPercentage">0%</span></div>
-<div style="font-size:10px;color:var(--text-muted);margin-bottom:6px">Виконано: <strong id="widgetTasks">0/18</strong></div>
+<div style="font-size:10px;color:var(--text-muted);margin-bottom:6px">Виконано: <strong id="widgetTasks">0/17</strong></div>
 <div class="progress-widget-mini-map" id="widgetMiniMap"></div>
 </div>
 <div class="toast-container" id="toastContainer"></div>
@@ -287,7 +290,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </div>
 </header>
-
 <!-- ГОЛОВНА -->
 <main class="container hidden" id="mainPage">
 <div class="hero-unified">
@@ -322,7 +324,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 <div class="tip-card">💡 <strong>Пам'ятай:</strong> Профілактика працює найкраще, коли поєднуються особисті дії, підтримка громади та державні програми.</div>
 </main>
-
 <!-- КРОК 1 - СТАРТОВЕ ЗАВДАННЯ -->
 <main class="container hidden" id="step1Page">
 <div class="step-header"><h2 class="step-title">🎯 Крок 1. Стартове завдання</h2></div>
@@ -349,7 +350,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </section>
 </main>
-
 <!-- КРОК 2 - ІНФЕКЦІЙНІ ЗАХВОРЮВАННЯ -->
 <main class="container hidden" id="step2Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">🦠 Крок 2. Інфекційні захворювання</h2><span class="step-badge">4 завдання</span></div></div>
@@ -372,7 +372,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="key-point">💡 <strong>Важливо!</strong> Інфекційні захворювання можуть швидко поширюватися. Під час епідемій відповідальність людини особливо важлива.</div>
 <div class="navigation"><button class="btn btn-secondary" onclick="goToMainPage()">← До змісту</button><button class="btn btn-primary" onclick="showS2('s2t1')">Далі: Завдання 1 →</button></div>
 </section>
-
 <section class="card hidden" id="s2t1">
 <h2>🧩 Завдання 1. Розподіли чинники ризику</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Розподіли чинники на дві групи: «Підвищують ризик інфекції» та «Не стосуються інфекцій (чинники НІЗ)».<br><br><strong>💻 На комп'ютері:</strong> перетягни картки мишею.<br><strong>📱 На телефоні:</strong> натисни на картку → натисни на цільову зону.</div>
@@ -385,7 +384,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s2t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS2('s2Theory')">← Назад</button><button class="btn btn-primary" onclick="chkInfect()">✓ Перевірити</button><button class="btn btn-success" onclick="showS2('s2t2')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s2t2">
 <h2>📝 Завдання 2. Аналіз ситуації: Артем у поході</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> Під час походу Артем випив воду з лісового джерела, бо вона здавалася чистою. Увечері в нього з'явився біль у животі, нудота й температура.</div>
@@ -405,7 +403,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s2t2f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS2('s2t1')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s2t2','s2t2f',3,'step2_task2')">✓ Перевірити</button><button class="btn btn-success" onclick="showS2('s2t3')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s2t3">
 <h2>📝 Завдання 3. Аналіз ситуації: Аліна з температурою</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> Уранці Аліна прокинулася з температурою 38 °C і болем у горлі. У школі мала бути важлива контрольна, тому вона прийняла противірусний засіб та пішла на навчання.</div>
@@ -416,16 +413,15 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="situation-content-right">
 <p style="margin:12px 0;color:var(--text-muted);font-style:italic">📌 <strong>Які висновки є правильними?</strong></p>
 <div class="task-options" id="s2t3">
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🦠 Аліна стала джерелом інфекції для однокласників</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">💊 Противірусний засіб без призначення лікаря — це самолікування</div></div></div>
-<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Залишитися вдома із симптомами — це «слабкість»</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛡️ Відповідальне рішення — залишитися вдома, викликати лікаря та попередити школу</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🦠 Аліна могла поширити інфекцію серед однокласників</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">💊 Приймати противірусні засоби без призначення лікаря — самолікування</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Залишитися вдома через хворобу — це «слабкість»</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛡️ Відповідальне рішення — залишитися вдома, повідомити школу та звернутися до лікаря</div></div></div>
 </div>
 </div></div>
 <div id="s2t3f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS2('s2t2')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s2t3','s2t3f',3,'step2_task3')">✓ Перевірити</button><button class="btn btn-success" onclick="showS2('s2t4')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s2t4">
 <h2>✅❌ Завдання 4. Правда чи брехня?</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Прочитай твердження та обери — правда це чи брехня.</div>
@@ -457,7 +453,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS2('s2t3')">← Назад</button><button class="btn btn-primary" onclick="chkTF('s2t4',{s2t4q1:'false',s2t4q2:'true',s2t4q3:'true'},'step2_task4')">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(3)">Далі: Крок 3 →</button></div>
 </section>
 </main>
-
 <!-- КРОК 3 - ЛАНЦЮГ ПОШИРЕННЯ ІНФЕКЦІЇ -->
 <main class="container hidden" id="step3Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">🔗 Крок 3. Ланцюг поширення інфекції</h2><span class="step-badge">3 завдання</span></div></div>
@@ -475,7 +470,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="impact-row"><div class="impact-icon">🚪</div><div class="impact-content"><h4>4. ВХІД В ОРГАНІЗМ</h4><p>Пошкоджена шкіра, дихальні шляхи, слизові. <strong>Як розірвати:</strong> гігієна, ЗІЗ, дезінфекція ран.</p></div></div>
 <div class="impact-row"><div class="impact-icon">👤</div><div class="impact-content"><h4>5. СПРИЙНЯТЛИВА ЛЮДИНА</h4><p>Будь-яка, особливо з ослабленим імунітетом, без щеплення. <strong>Як розірвати:</strong> вакцинація, здорові звички, захист груп ризику.</p></div></div>
 </div>
-
 <h3 style="margin:24px 0 16px;color:var(--primary)">🎮 Симулятор: розірви ланцюг!</h3>
 <div class="chain-simulator">
 <p style="text-align:center;margin-bottom:12px;color:var(--primary);font-weight:600">👆 Натискай на ланки, щоб «розірвати» ланцюг. Спробуй зупинити інфекцію!</p>
@@ -493,11 +487,9 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="chainFeedback" class="feedback" style="display:none;margin-top:16px"></div>
 <button class="btn btn-warning" onclick="resetChain()" style="margin-top:12px">🔄 Відновити ланцюг</button>
 </div>
-
 <div class="key-point">💡 <strong>Спалах</strong> — раптове збільшення випадків у одному місці. <strong>Епідемія</strong> — більша територія. <strong>Пандемія</strong> — багато країн/континентів.</div>
 <div class="navigation"><button class="btn btn-secondary" onclick="goToMainPage()">← До змісту</button><button class="btn btn-primary" onclick="showS3('s3t1')">Далі: Завдання 1 →</button></div>
 </section>
-
 <section class="card hidden" id="s3t1">
 <h2>🔗 Завдання 1. Зіставлення: ланка → як розірвати</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> З'єднай ланку ланцюга з дією, яка її розриває.</div>
@@ -510,7 +502,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s3t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3Theory')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s3t1',{m31:'b',m32:'d',m33:'c',m34:'a'},'step3_task1')">✓ Перевірити</button><button class="btn btn-success" onclick="showS3('s3t2')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s3t2">
 <h2>🔗 Завдання 2. Спалах / Епідемія / Пандемія</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожної ситуації визнач масштаб поширення інфекції.</div>
@@ -522,10 +513,9 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s3t2f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3t1')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s3t2',{m321:'a',m322:'b',m323:'c'},'step3_task2')">✓ Перевірити</button><button class="btn btn-success" onclick="showS3('s3t3')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s3t3">
 <h2>📝 Завдання 3. Кейс: спалах Еболи в Нігерії</h2>
-<div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> 20 липня 2014 року до Нігерії прибув чоловік із гарячкою. Медики запідозрили Еболу, ізолювали пацієнта й повідомили органи охорони здоров'я. Відстежили 894 контактні особи. 20 жовтня ВООЗ оголосила Нігерію вільною від передавання Еболи.</div>
+<div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> 20 липня 2014 року до Нігерії прибув чоловік із гарячкою. Медики запідозрили Еболу, ізолювали пацієнта й повідомили органи охорони здоров'я. Відстежили 894 контакні особи та організували спостереження за ними. 20 жовтня ВООЗ оголосила Нігерію вільною від передавання Еболи.</div>
 <div class="situation-layout">
 <div class="situation-illustration-left">
 <img src="https://res.cloudinary.com/dmydvhkzr/image/upload/v1792138320/20-5_eama57.png" alt="Спалах Еболи в Нігерії — медики в захисних костюмах" class="situation-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect fill=%22%23fee2e2%22 width=%22300%22 height=%22200%22/><text x=%22150%22 y=%22100%22 text-anchor=%22middle%22 font-size=%2250%22>🏥🦠</text></svg>'">
@@ -533,20 +523,19 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="situation-content-right">
 <p style="margin:12px 0;color:var(--text-muted);font-style:italic">📌 <strong>Які дії допомогли розірвати ланцюг?</strong></p>
 <div class="task-options" id="s3t3">
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🤒 Ізоляція хворих — розірвала ланку «джерело інфекції»</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🔍 Відстеження 894 контактних осіб — розірвало шлях передавання</div></div></div>
-<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Це була лише заслуга однієї людини</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🏛️ Важлива відповідальність і медичних служб, і влади, і кожного громадянина</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🤒 Ізоляція хворих допомогла розірвати ланку передачі інфекції</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🔍 Виявлення та спостереження за контактними особами допомогли запобігти подальшому поширенню</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Подолання спалаху було заслугою лише однієї людини</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🏛️ Для подолання спалаху була важлива спільна робота медичних служб, влади та громадян</div></div></div>
 </div>
 </div></div>
 <div id="s3t3f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3t2')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s3t3','s3t3f',3,'step3_task3')">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(4)">Далі: Крок 4 →</button></div>
 </section>
 </main>
-
 <!-- КРОК 4 - НЕІНФЕКЦІЙНІ ЗАХВОРЮВАННЯ -->
 <main class="container hidden" id="step4Page">
-<div class="step-header"><div class="step-header-top"><h2 class="step-title">🫀 Крок 4. Неінфекційні захворювання</h2><span class="step-badge">4 завдання</span></div></div>
+<div class="step-header"><div class="step-header-top"><h2 class="step-title">🫀 Крок 4. Неінфекційні захворювання</h2><span class="step-badge">3 завдання</span></div></div>
 <section class="card" id="s4Theory">
 <h2>📖 Теоретичний блок</h2>
 <div class="theory-compact" style="background:linear-gradient(135deg,#f3e8ff,#e9d5ff);border-color:#a855f7">
@@ -578,37 +567,66 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="goToMainPage()">← До змісту</button><button class="btn btn-primary" onclick="showS4('s4t1')">Далі: Завдання 1 →</button></div>
 </section>
 
+<!-- НОВЕ ЗАВДАННЯ 1: множинний вибір для кожної групи захворювань -->
 <section class="card hidden" id="s4t1">
-<h2>🔄 Завдання 1. Розташуй кроки профілактики</h2>
-<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Розташуй універсальні кроки профілактики НІЗ у правильному порядку — від найважливішого щоденного до системного.<br><br><strong>💻 На комп'ютері:</strong> перетягни картки.<br><strong>📱 На телефоні:</strong> натисни на картку → натисни на слот.</div>
-<div class="dnd-container">
-<div class="dnd-bank"><h4>🔄 Кроки (перемішані)</h4><div id="nizBank"></div><button class="dnd-reset-btn" onclick="resetNiz()">🔄 Перемішати</button></div>
-<div class="dnd-target"><h4>✅ Правильний порядок</h4><div id="nizTarget">
-<div class="dnd-slot" data-pos="1" onclick="dropNizHere(this)"><div class="dnd-slot-number">1</div><div class="dnd-slot-placeholder">Перший крок...</div></div>
-<div class="dnd-slot" data-pos="2" onclick="dropNizHere(this)"><div class="dnd-slot-number">2</div><div class="dnd-slot-placeholder">Другий крок...</div></div>
-<div class="dnd-slot" data-pos="3" onclick="dropNizHere(this)"><div class="dnd-slot-number">3</div><div class="dnd-slot-placeholder">Третій крок...</div></div>
-<div class="dnd-slot" data-pos="4" onclick="dropNizHere(this)"><div class="dnd-slot-number">4</div><div class="dnd-slot-placeholder">Четвертий крок...</div></div>
-</div></div>
+<h2>🛡️ Завдання 1. Обери чинники захисту для кожної групи захворювань</h2>
+<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожної групи захворювань відміть <strong>усі</strong> чинники, які допомагають у профілактиці. Неправильні варіанти — це чинники ризику, а не захисту.</div>
+
+<div class="group-block">
+<h4>🫀 1. Серцево-судинні захворювання</h4>
+<div class="group-hint">Відміть усі правильні чинники захисту (їх декілька)</div>
+<div class="task-options" id="s4t1g1">
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🧂 Збалансоване харчування з обмеженням солі</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🚭 Відмова від сигарет і вейпів</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🍬 Вживання великої кількості солодощів щодня</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛋️ Малорухливий спосіб життя</div></div></div>
 </div>
+</div>
+
+<div class="group-block">
+<h4>🍬 2. Цукровий діабет ІІ типу</h4>
+<div class="group-hint">Відміть усі правильні чинники захисту (їх декілька)</div>
+<div class="task-options" id="s4t1g2">
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🥗 Збалансоване харчування з обмеженням цукру</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🏃 Регулярна фізична активність</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🥤 Щоденне вживання солодких напоїв</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😴 Хронічне недосипання</div></div></div>
+</div>
+</div>
+
+<div class="group-block">
+<h4>🎗️ 3. Онкологічні захворювання</h4>
+<div class="group-hint">Відміть усі правильні чинники захисту (їх декілька)</div>
+<div class="task-options" id="s4t1g3">
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🚭 Відмова від сигарет і вейпів</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🩺 Регулярні профілактичні огляди</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🍺 Вживання алкоголю</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">☀️ Тривале перебування на сонці без захисту</div></div></div>
+</div>
+</div>
+
+<div class="group-block">
+<h4>🫁 4. Хронічні хвороби дихальної системи</h4>
+<div class="group-hint">Відміть усі правильні чинники захисту (їх декілька)</div>
+<div class="task-options" id="s4t1g4">
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🚭 Відмова від сигарет і вейпів</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🌳 Уникнення забрудненого повітря</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">💨 Перебування в задимлених приміщеннях</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😷 Ігнорування симптомів кашлю</div></div></div>
+</div>
+</div>
+
 <div id="s4t1f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4Theory')">← Назад</button><button class="btn btn-primary" onclick="chkNiz()">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t2')">Далі →</button></div>
-</section>
-
-<section class="card hidden" id="s4t2">
-<h2>🔗 Завдання 2. Зіставлення: захворювання → чинник захисту</h2>
-<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожного захворювання обери чинник, який є особливо важливим для його профілактики.</div>
-<div id="matchingContainer">
-<div class="matching-row"><div class="matching-left">🫀 Серцево-судинні захворювання</div><div class="matching-arrow">→</div><select class="matching-select" id="m41"><option value="">Обери чинник...</option><option value="a">Відмова від сигарет і вейпів</option><option value="b">Збалансоване харчування з обмеженням солі</option><option value="c">Регулярні профілактичні огляди</option><option value="d">Відмова від алкоголю</option></select></div>
-<div class="matching-row"><div class="matching-left">🍬 Цукровий діабет ІІ типу</div><div class="matching-arrow">→</div><select class="matching-select" id="m42"><option value="">Обери чинник...</option><option value="a">Відмова від сигарет і вейпів</option><option value="b">Збалансоване харчування з обмеженням цукру</option><option value="c">Регулярні профілактичні огляди</option><option value="d">Відмова від алкоголю</option></select></div>
-<div class="matching-row"><div class="matching-left">🎗️ Онкологічні захворювання</div><div class="matching-arrow">→</div><select class="matching-select" id="m43"><option value="">Обери чинник...</option><option value="a">Відмова від сигарет і вейпів</option><option value="b">Збалансоване харчування</option><option value="c">Регулярні профілактичні огляди</option><option value="d">Відмова від алкоголю</option></select></div>
-<div class="matching-row"><div class="matching-left">🫁 Хронічні хвороби дихальної системи</div><div class="matching-arrow">→</div><select class="matching-select" id="m44"><option value="">Обери чинник...</option><option value="a">Відмова від сигарет і вейпів</option><option value="b">Збалансоване харчування</option><option value="c">Регулярні профілактичні огляди</option><option value="d">Відмова від алкоголю</option></select></div>
+<div class="navigation">
+<button class="btn btn-secondary" onclick="showS4('s4Theory')">← Назад</button>
+<button class="btn btn-primary" onclick="chkS4T1()">✓ Перевірити</button>
+<button class="btn btn-success" onclick="showS4('s4t2')">Далі →</button>
 </div>
-<div id="s4t2f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t1')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s4t2',{m41:'b',m42:'b',m43:'a',m44:'a'},'step4_task2')">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t3')">Далі →</button></div>
 </section>
 
-<section class="card hidden" id="s4t3">
-<h2>📝 Завдання 3. Аналіз ситуації: Софія і Денис</h2>
+<!-- Завдання 2 (колишнє s4t3) -->
+<section class="card hidden" id="s4t2">
+<h2>📝 Завдання 2. Аналіз ситуації: Софія і Денис</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> Софія щодня після школи проводить час за комп'ютером. Вона майже не гуляє й не займається фізичною активністю. Денис часто замінює обід чипсами і солодкими напоями. Овочі, фрукти й звичайну воду він уживає рідко.</div>
 <div class="situation-layout">
 <div class="situation-illustration-left">
@@ -616,52 +634,52 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 <div class="situation-content-right">
 <p style="margin:12px 0;color:var(--text-muted);font-style:italic">📌 <strong>Які висновки є правильними?</strong></p>
-<div class="task-options" id="s4t3">
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛋️ Софія має чинник ризику — малорухливий спосіб життя</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🍔 Денис накопичує ризик НІЗ через незбалансоване харчування</div></div></div>
-<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 У їхньому віці це не має значення</div></div></div>
+<div class="task-options" id="s4t2opts">
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛋️ Софія має чинник ризику НІЗ — недостатню фізичну активність</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🍔 Незбалансоване харчування підвищує ризик розвитку НІЗ у Дениса</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 У підлітковому віці ці звички ще не впливають на здоров’я</div></div></div>
 <div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛡️ Обом допоможуть регулярна фізична активність і збалансоване харчування</div></div></div>
 </div>
 </div></div>
-<div id="s4t3f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t2')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s4t3','s4t3f',3,'step4_task3')">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t4')">Далі →</button></div>
+<div id="s4t2f" class="feedback" style="display:none"></div>
+<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t1')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s4t2opts','s4t2f',3,'step4_task2')">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t3')">Далі →</button></div>
 </section>
 
-<section class="card hidden" id="s4t4">
-<h2>📊 Завдання 4. Дослідження STEPS: аналіз статистики</h2>
-<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Проаналізуй дані дослідження STEPS (чинники ризику НІЗ в Україні, 2019) і дай відповіді.</div>
+<!-- Завдання 3 (колишнє s4t4) -->
+<section class="card hidden" id="s4t3">
+<h2>📊 Завдання 3. Дослідження STEPS: аналіз статистики</h2>
+<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Проаналізуй дані дослідження STEPS завдання 2, с. 35 підручника та обери відповіді на запитання.</div>
 <div class="accordion-item">
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 Який поведінковий чинник ризику був найпоширенішим?</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
-<div class="task-options" id="s4t4q1">
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🚬 Куріння (33,9%)</div></div></div>
-<div class="option" data-correct="true" onclick="selAcc(this,'s4t4q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🧂 Споживання солі ≥5 г/добу (86,9%)</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🍺 Активне вживання алкоголю (55,6%)</div></div></div>
-</div><div id="s4t4q1f" class="feedback" style="display:none;margin-top:12px"></div>
+<div class="task-options" id="s4t3q1">
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🚬 Куріння</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s4t3q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🧂 Споживання солі ≥5 г/добу</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🍺 Активне вживання алкоголю</div></div></div>
+</div><div id="s4t3q1f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div class="accordion-item">
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 Чому надмірне споживання солі підвищує ризик НІЗ?</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
-<div class="task-options" id="s4t4q2">
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">😐 Сіль не впливає на здоров'я</div></div></div>
-<div class="option" data-correct="true" onclick="selAcc(this,'s4t4q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🫀 Надлишок солі підвищує артеріальний тиск і ризик серцево-судинних захворювань</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🍬 Сіль викликає цукровий діабет</div></div></div>
-</div><div id="s4t4q2f" class="feedback" style="display:none;margin-top:12px"></div>
+<div class="task-options" id="s4t3q2">
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">😐 Надлишок солі спричиняє лише тимчасову спрагу</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s4t3q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🫀 Надлишок солі підвищує артеріальний тиск і ризик серцево-судинних захворювань</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🍬 Сіль викликає цукровий діабет</div></div></div>
+</div><div id="s4t3q2f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div class="accordion-item">
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 Чому низьке споживання овочів і фруктів вважають чинником ризику?</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
-<div class="task-options" id="s4t4q3">
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">😐 Овочі та фрукти не впливають на здоров'я</div></div></div>
-<div class="option" data-correct="true" onclick="selAcc(this,'s4t4q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🛡️ Вони містять клітковину, вітаміни та антиоксиданти, що захищають від НІЗ</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s4t4q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🦠 Вони захищають лише від інфекцій</div></div></div>
-</div><div id="s4t4q3f" class="feedback" style="display:none;margin-top:12px"></div>
+<div class="task-options" id="s4t3q3">
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">😐 Овочі та фрукти потрібні лише для нормального травлення</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s4t3q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🛡️ Вони містять клітковину, вітаміни та антиоксиданти, що захищають від НІЗ</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s4t3q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🦠 Вони захищають лише від інфекцій</div></div></div>
+</div><div id="s4t3q3f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
-<div id="s4t4f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t3')">← Назад</button><button class="btn btn-primary" onclick="chkAccordion('s4t4',3)">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(5)">Далі: Крок 5 →</button></div>
+<div id="s4t3f" class="feedback" style="display:none"></div>
+<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t2')">← Назад</button><button class="btn btn-primary" onclick="chkAccordion('s4t3',3)">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(5)">Далі: Крок 5 →</button></div>
 </section>
 </main>
-
 <!-- КРОК 5 - МЕНТАЛЬНЕ ЗДОРОВ'Я -->
 <main class="container hidden" id="step5Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">🧠 Крок 5. Ментальне здоров'я</h2><span class="step-badge">3 завдання</span></div></div>
@@ -669,7 +687,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <h2>📖 Теоретичний блок</h2>
 <div class="theory-compact" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-color:#f9a8d4">
 <h4 style="color:#be185d">🧠 Ментальне здоров'я — це частина загального</h4>
-<p>Порушення ментального здоров'я можуть бути тимчасовими реакціями на стрес або проявами психічних розладів, які потребують професійної допомоги.</p>
+<p>Порушення ментального (психічного) здоров’я можуть бути тимчасовими реакціями на стрес і складні події або проявами психічних розладів, які потребують професійної діагностики й допомоги.</p>
 <p>За оцінкою ВООЗ, після трьох років повномасштабної війни <strong>46% українців мали проблеми із ментальним здоров'ям</strong>.</p>
 </div>
 <h3 style="margin:24px 0 16px;color:var(--primary)">⚠️ Чинники погіршення ментального здоров'я</h3>
@@ -681,19 +699,27 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="theory-block block-blue"><h4>😰 Хронічний стрес</h4><p>Недосипання, перевантаження, постійна напруга.</p></div>
 <div class="theory-block block-green"><h4>⚠️ Тривала небезпека</h4><p>Обстріли, повітряні тривоги, життя в зоні ризику.</p></div>
 </div>
-<h3 style="margin:24px 0 16px;color:var(--primary)">📊 Звернення щодо порушень ментального здоров'я</h3>
 <div class="chart-container">
-<div class="chart-title">📈 Невротичні та пов'язані зі стресом розлади в Україні</div>
+<div class="chart-title">📈 Звернення щодо порушень ментального здоров'я в Україні</div>
+<div style="margin-bottom:20px">
+<div style="font-weight:600;color:var(--primary);margin-bottom:8px;font-size:14px">🧠 Невротичні, пов'язані зі стресом розлади</div>
 <div class="chart-bars">
-<div class="chart-bar-row"><div class="chart-bar-label">📅 2020 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-info" style="width:59.6%">59,6 тис.</div></div></div>
-<div class="chart-bar-row"><div class="chart-bar-label">📅 2025 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-danger" style="width:91.7%">91,7 тис.</div></div></div>
+<div class="chart-bar-row"><div class="chart-bar-label">📅 2020 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-info" style="width:65%">59,6 тис.</div></div></div>
+<div class="chart-bar-row"><div class="chart-bar-label">📅 2025 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-danger" style="width:100%">91,7 тис.</div></div></div>
 </div>
-<p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted)">Зростання на 54% за 5 років — важливий сигнал для суспільства.</p>
+</div>
+<div>
+<div style="font-weight:600;color:var(--primary);margin-bottom:8px;font-size:14px">🏥 Стаціонарні випадки</div>
+<div class="chart-bars">
+<div class="chart-bar-row"><div class="chart-bar-label">📅 2020 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-info" style="width:27%">14,7 тис.</div></div></div>
+<div class="chart-bar-row"><div class="chart-bar-label">📅 2025 рік</div><div class="chart-bar-track"><div class="chart-bar-fill bar-danger" style="width:100%">54,5 тис.</div></div></div>
+</div>
+</div>
+<p style="text-align:center;margin-top:16px;font-size:13px;color:var(--text-muted);font-style:italic">Невротичні, пов'язані зі стресом розлади почастішали: у 2025 році було 91,7 тис. звернень проти 59,6 тис. у 2020-му, а стаціонарних випадків — 54,5 тис. проти 14,7 тис.</p>
 </div>
 <div class="key-point">💡 <strong>Важливо!</strong> Вчасне звернення до фахівця допомагає зменшити ризик погіршення стану й повернути людині контроль над життям.</div>
 <div class="navigation"><button class="btn btn-secondary" onclick="goToMainPage()">← До змісту</button><button class="btn btn-primary" onclick="showS5('s5t1')">Далі: Завдання 1 →</button></div>
 </section>
-
 <section class="card hidden" id="s5t1">
 <h2>🔗 Завдання 1. Зіставлення: чинник → прояв</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> З'єднай чинник погіршення ментального здоров'я з його проявом.</div>
@@ -701,12 +727,11 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="matching-row"><div class="matching-left">🏠 Вимушене переселення</div><div class="matching-arrow">→</div><select class="matching-select" id="m51"><option value="">Обери прояв...</option><option value="a">Самотність, розрив соціальних зв'язків</option><option value="b">Страх, нестабільність</option><option value="c">Недосипання, перевантаження</option><option value="d">Залежність від ПАР</option></select></div>
 <div class="matching-row"><div class="matching-left">🌫️ Невизначеність майбутнього</div><div class="matching-arrow">→</div><select class="matching-select" id="m52"><option value="">Обери прояв...</option><option value="a">Самотність, розрив соціальних зв'язків</option><option value="b">Страх, нестабільність, фінансові труднощі</option><option value="c">Недосипання, перевантаження</option><option value="d">Залежність від ПАР</option></select></div>
 <div class="matching-row"><div class="matching-left">😰 Хронічний стрес</div><div class="matching-arrow">→</div><select class="matching-select" id="m53"><option value="">Обери прояв...</option><option value="a">Самотність, розрив соціальних зв'язків</option><option value="b">Страх, нестабільність</option><option value="c">Недосипання, перевантаження, постійна напруга</option><option value="d">Залежність від ПАР</option></select></div>
-<div class="matching-row"><div class="matching-left">💊 Психоактивні речовини</div><div class="matching-arrow">→</div><select class="matching-select" id="m54"><option value="">Обери прояв...</option><option value="a">Самотність, розрив соціальних зв'язків</option><option value="b">Страх, нестабільність</option><option value="c">Недосипання, перевантаження</option><option value="d">Залежність, погіршення ментального здоров'я</option></select></div>
+<div class="matching-row"><div class="matching-left">💊 Психоактивні речовини</div><div class="matching-arrow">→</div><select class="matching-select" id="m54"><option value="">Обери прояв...</option><option value="a">Самотність, розрив соціальних зв'язків</option><option value="b">Страх, нестабільність</option><option value="c">Недосипання, перевантаження</option><option value="d">Залежність від ПАР</option></select></div>
 </div>
 <div id="s5t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS5('s5Theory')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s5t1',{m51:'a',m52:'b',m53:'c',m54:'d'},'step5_task1')">✓ Перевірити</button><button class="btn btn-success" onclick="showS5('s5t2')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s5t2">
 <h2>📝 Завдання 2. Аналіз ситуації: Дмитро</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Ситуація:</strong> Дмитро постійно читає новини, особливо перед сном. Коли з'являються повідомлення про небезпеку, він не може заснути. Щоб заспокоїтися, почав користуватися вейпом. З часом помітив, що без вейпа важко розслабитися, а потреба перевіряти новини не зникає.</div>
@@ -717,30 +742,29 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="situation-content-right">
 <p style="margin:12px 0;color:var(--text-muted);font-style:italic">📌 <strong>Які висновки є правильними?</strong></p>
 <div class="task-options" id="s5t2">
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">📱 Нескінченне читання новин (думскролінг) погіршує ментальне здоров'я</div></div></div>
-<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">💨 Вейп — це психоактивна речовина, яка викликає залежність, а не вирішує проблему</div></div></div>
-<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Вейп — безпечний спосіб заспокоїтися</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">📱 Постійне читання тривожних новин, особливо перед сном, може погіршувати ментальне здоров’я</div></div></div>
+<div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">💨 Вейпінг може спричиняти нікотинову залежність і не усуває причину тривоги</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Вейпінг — безпечний спосіб заспокоїтися</div></div></div>
 <div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛡️ Дмитру допоможуть техніки самодопомоги, режим сну, звернення до психолога</div></div></div>
 </div>
 </div></div>
 <div id="s5t2f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS5('s5t1')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s5t2','s5t2f',3,'step5_task2')">✓ Перевірити</button><button class="btn btn-success" onclick="showS5('s5t3')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s5t3">
 <h2>📊 Завдання 3. Аналіз статистики ментального здоров'я</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Проаналізуй дані про звернення щодо ментального здоров'я в Україні та обери правильні висновки.</div>
 <div class="task-options" id="s5t3">
 <div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">📈 Кількість звернень щодо невротичних розладів зросла з 59,6 тис. (2020) до 91,7 тис. (2025)</div></div></div>
 <div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">⚠️ Це важливий сигнал для суспільства про потребу підтримки ментального здоров'я</div></div></div>
-<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Зростання звернень означає, що люди стали «слабшими»</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 До 2025 року люди соромилися звертатися по допомогу </div></div></div>
 <div class="option" data-correct="true" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">🛡️ Вчасне звернення до фахівця — це відповідальний крок, а не слабкість</div></div></div>
+<div class="option" data-correct="false" onclick="tog(this)" tabindex="0"><div class="option-checkbox"></div><div class="option-text"><div class="option-label">😐 Зростання звернень означає, що люди стали емоційно нестабільнішими </div></div></div>
 </div>
 <div id="s5t3f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS5('s5t2')">← Назад</button><button class="btn btn-primary" onclick="chkMulti('s5t3','s5t3f',3,'step5_task3')">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(6)">Далі: Крок 6 →</button></div>
 </section>
 </main>
-
 <!-- КРОК 6 - ВИДИ І РІВНІ ПРОФІЛАКТИКИ -->
 <main class="container hidden" id="step6Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">📊 Крок 6. Види і рівні профілактики</h2><span class="step-badge">3 завдання</span></div></div>
@@ -765,7 +789,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="key-point">💡 <strong>Пам'ятай:</strong> Профілактика працює найкраще, коли поєднуються особисті дії, підтримка громади та державні програми.</div>
 <div class="navigation"><button class="btn btn-secondary" onclick="goToMainPage()">← До змісту</button><button class="btn btn-primary" onclick="showS6('s6t1')">Далі: Завдання 1 →</button></div>
 </section>
-
 <section class="card hidden" id="s6t1">
 <h2>🔗 Завдання 1. Зіставлення: рівень → мета</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> З'єднай рівень профілактики за часом впливу з його метою.</div>
@@ -777,17 +800,16 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s6t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS6('s6Theory')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s6t1',{m61:'a',m62:'b',m63:'c'},'step6_task1')">✓ Перевірити</button><button class="btn btn-success" onclick="showS6('s6t2')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s6t2">
 <h2>🧩 Завдання 2. Визнач рівень відповідальності (5 ситуацій)</h2>
-<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожної ситуації визнач, на якому рівні відповідальності здійснюється профілактика.</div>
+<div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожної ситуації визнач, переважно на якому рівні відповідальності здійснюється профілактика.</div>
 <div class="accordion-item">
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 12-річна Марта отримала щеплення від ВПЛ відповідно до календаря вакцинації</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
 <div class="task-options" id="s6t2q1">
-<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний + 🏛️ Державний (календар щеплень)</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Лише рівень школи</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Лише державний</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Державний (календар щеплень)</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Рівень школи</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q1','q1')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний</div></div></div>
 </div><div id="s6t2q1f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div class="accordion-item">
@@ -795,17 +817,17 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="accordion-content"><div class="accordion-body">
 <div class="task-options" id="s6t2q2">
 <div class="option" data-correct="true" onclick="selAcc(this,'s6t2q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний (особиста відповідальність за огляд)</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Лише рівень школи</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Лише державний</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Рівень школи</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q2','q2')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Державний рівень</div></div></div>
 </div><div id="s6t2q2f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div class="accordion-item">
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 58-річний Ігор проходить курс реабілітації після інсульту</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
 <div class="task-options" id="s6t2q3">
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Лише індивідуальний</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Лише рівень школи</div></div></div>
-<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний + 🏛️ Державний (медична допомога)</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Рівень школи</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q3','q3')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Державний (медична допомога)</div></div></div>
 </div><div id="s6t2q3f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div class="accordion-item">
@@ -821,15 +843,14 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="accordion-header" onclick="toggleAccordion(this)"><span>📋 62-річна Галина має цукровий діабет і отримує препарати інсуліну за державною програмою відшкодування</span><span class="accordion-icon">▼</span></div>
 <div class="accordion-content"><div class="accordion-body">
 <div class="task-options" id="s6t2q5">
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Лише індивідуальний</div></div></div>
-<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Лише рівень школи</div></div></div>
-<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний + 🏛️ Державний (програма відшкодування)</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">👤 Індивідуальний</div></div></div>
+<div class="option" data-correct="false" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏫 Рівень школи</div></div></div>
+<div class="option" data-correct="true" onclick="selAcc(this,'s6t2q5','q5')" tabindex="0"><div class="option-radio"></div><div class="option-text"><div class="option-label">🏛️ Державний (програма відшкодування)</div></div></div>
 </div><div id="s6t2q5f" class="feedback" style="display:none;margin-top:12px"></div>
 </div></div></div>
 <div id="s6t2f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS6('s6t1')">← Назад</button><button class="btn btn-primary" onclick="chkAccordion('s6t2',5)">✓ Завершити</button><button class="btn btn-success" onclick="showS6('s6t3')">Далі →</button></div>
 </section>
-
 <section class="card hidden" id="s6t3">
 <h2>🔄 Завдання 3. Визнач тип профілактики</h2>
 <div class="feedback feedback-warning mb-24"><strong>📌 Інструкція:</strong> Для кожної ситуації визнач, до якого рівня за часом впливу належить профілактика.</div>
@@ -843,7 +864,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS6('s6t2')">← Назад</button><button class="btn btn-primary" onclick="chkMatching('s6t3',{m631:'a',m632:'b',m633:'c',m634:'c'},'step6_task3')">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(7)">Далі: Самооцінювання →</button></div>
 </section>
 </main>
-
 <!-- КРОК 7 - САМООЦІНЮВАННЯ -->
 <main class="container hidden" id="step7Page">
 <div class="step7-header"><h2>🎉 Вітаємо! Ти завершив(ла) параграф!</h2><p>Час дізнатися свій рівень</p></div>
@@ -851,11 +871,11 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="skill-eval"><div class="skill-title">🦠 Я можу навести приклади чинників ризику інфекційних захворювань</div><div class="star-rating" data-skill="1"><span class="star" onclick="rate(1,1)">★</span><span class="star" onclick="rate(1,2)">★</span><span class="star" onclick="rate(1,3)">★</span><span class="star" onclick="rate(1,4)">★</span><span class="star" onclick="rate(1,5)">★</span></div></div>
 <div class="skill-eval"><div class="skill-title">🔗 Я можу пояснити, як розірвати ланцюг поширення інфекції</div><div class="star-rating" data-skill="2"><span class="star" onclick="rate(2,1)">★</span><span class="star" onclick="rate(2,2)">★</span><span class="star" onclick="rate(2,3)">★</span><span class="star" onclick="rate(2,4)">★</span><span class="star" onclick="rate(2,5)">★</span></div></div>
 <div class="skill-eval"><div class="skill-title">🫀 Я розумію чинники ризику та профілактики неінфекційних захворювань</div><div class="star-rating" data-skill="3"><span class="star" onclick="rate(3,1)">★</span><span class="star" onclick="rate(3,2)">★</span><span class="star" onclick="rate(3,3)">★</span><span class="star" onclick="rate(3,4)">★</span><span class="star" onclick="rate(3,5)">★</span></div></div>
-<div class="skill-eval"><div class="skill-title">🧠 Я можу розпізнати чинники погіршення ментального здоров'я</div><div class="star-rating" data-skill="4"><span class="star" onclick="rate(4,1)">★</span><span class="star" onclick="rate(4,2)">★</span><span class="star" onclick="rate(4,3)">★</span><span class="star" onclick="rate(4,4)">★</span><span class="star" onclick="rate(4,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">🧠 Я можу розпізнати чинники погіршення ментального (психічного) здоров'я</div><div class="star-rating" data-skill="4"><span class="star" onclick="rate(4,1)">★</span><span class="star" onclick="rate(4,2)">★</span><span class="star" onclick="rate(4,3)">★</span><span class="star" onclick="rate(4,4)">★</span><span class="star" onclick="rate(4,5)">★</span></div></div>
 <div class="skill-eval"><div class="skill-title">📊 Я можу розрізняти рівні профілактики за часом і відповідальністю</div><div class="star-rating" data-skill="5"><span class="star" onclick="rate(5,1)">★</span><span class="star" onclick="rate(5,2)">★</span><span class="star" onclick="rate(5,3)">★</span><span class="star" onclick="rate(5,4)">★</span><span class="star" onclick="rate(5,5)">★</span></div></div>
 </div>
 <div class="stats-grid">
-<div class="stat-card"><div class="stat-value" id="statTasks">0/18</div><div class="stat-label">✅ Виконано</div></div>
+<div class="stat-card"><div class="stat-value" id="statTasks">0/17</div><div class="stat-label">✅ Виконано</div></div>
 <div class="stat-card"><div class="stat-value" id="statCorrect">0</div><div class="stat-label">🎯 Правильних</div></div>
 <div class="stat-card"><div class="stat-value" id="statSteps">0/6</div><div class="stat-label">📍 Кроків</div></div>
 <div class="stat-card"><div class="stat-value" id="statAccuracy">0%</div><div class="stat-label">🎯 Точність</div></div>
@@ -865,13 +885,12 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="tip-card">💡 <strong>Хворобу легше попередити, ніж лікувати.</strong><br>🌱 Дбай про своє здоров'я вже сьогодні!</div>
 <div class="navigation"><button class="btn btn-warning" onclick="resetProgress()">🔄 Пройти ще раз</button><button class="btn btn-primary" onclick="goToMainPage()">🏠 На головну</button></div>
 </main>
-
 <!-- MODALS -->
 <div class="modal-overlay" id="progressModal" role="dialog" aria-modal="true" aria-labelledby="pTitle">
 <div class="modal"><div class="modal-header"><h2 id="pTitle">📊 Мій прогрес</h2><button class="modal-close" onclick="closeModal('progressModal')">✕</button></div>
 <div class="text-center"><div style="font-size:48px;margin-bottom:16px" id="mEmoji">⭐☆☆☆☆</div><h3 style="color:var(--primary);margin-bottom:24px" id="mName">Початківець</h3>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px">
-<div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--accent)" id="mT">0/18</div><div style="font-size:12px;color:var(--text-muted)">Завдань</div></div>
+<div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--accent)" id="mT">0/17</div><div style="font-size:12px;color:var(--text-muted)">Завдань</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--success)" id="mC">0</div><div style="font-size:12px;color:var(--text-muted)">Правильних</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--warning)" id="mS">0/6</div><div style="font-size:12px;color:var(--text-muted)">Кроків</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--primary)" id="mA">0%</div><div style="font-size:12px;color:var(--text-muted)">Точність</div></div>
@@ -882,18 +901,17 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="modal"><div class="modal-header"><h2 id="hTitle">❓ Як працювати</h2><button class="modal-close" onclick="closeModal('helpModal')">✕</button></div>
 <div class="feature-list">
 <div data-icon="🚀" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Як почати?</strong><br>Натисни «Розпочати параграф».</div>
-<div data-icon="✅" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Форми завдань:</strong><br>Тести, перетягування, зіставлення, акордеон, правда/брехня, симулятор ланцюга інфекції, аналіз діаграм.</div>
+<div data-icon="✅" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Форми завдань:</strong><br>Тести, перетягування, зіставлення, акордеон, правда/брехня, симулятор ланцюга інфекції, аналіз діаграм, множинний вибір для груп захворювань.</div>
 <div data-icon="🏆" style="padding:10px 0 10px 32px;position:relative"><strong>Прогрес:</strong><br>Натисни на віджет прогресу для перегляду статистики.</div>
 </div>
 <button class="btn btn-primary mt-24" onclick="closeModal('helpModal')" style="width:100%">Зрозуміло!</button></div></div>
-
 <script>
-var TOTAL_TASKS = 18;
+var TOTAL_TASKS = 17;
 var ST = {
 step1: {t:1, c:0, tasks:{task1:0}},
 step2: {t:4, c:0, tasks:{task1:0, task2:0, task3:0, task4:0}},
 step3: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}},
-step4: {t:4, c:0, tasks:{task1:0, task2:0, task3:0, task4:0}},
+step4: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}},
 step5: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}},
 step6: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}}
 };
@@ -901,10 +919,8 @@ var SC = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0};
 var PT = {c:0, t:TOTAL_TASKS, a:[]};
 var state = {cs:0, sr:[0,0,0,0,0]};
 var selSymptom = null;
-var selNiz = null;
 var accordionCompleted = {};
 var tfCompleted = {};
-
 function addC(id) {
 if (PT.a.indexOf(id) !== -1) return;
 PT.a.push(id);
@@ -962,7 +978,7 @@ wb.appendChild(dot);
 }
 function saveP() {
 try {
-sessionStorage.setItem("s20v2", JSON.stringify({
+sessionStorage.setItem("s20v3", JSON.stringify({
 PT: {c: PT.c, t: TOTAL_TASKS, a: PT.a},
 ST: ST, SC: SC, state: state
 }));
@@ -970,7 +986,7 @@ ST: ST, SC: SC, state: state
 }
 function loadP() {
 try {
-var s = localStorage.getItem("s20v2");
+var s = localStorage.getItem("s20v3");
 if (s) {
 var d = JSON.parse(s);
 if (d.PT) { PT.c = d.PT.c || 0; PT.a = d.PT.a || []; }
@@ -997,7 +1013,7 @@ var steps = [
 {id:1, icon:"🎯", title:"Стартове завдання", tasks:1},
 {id:2, icon:"🦠", title:"Інфекційні захворювання", tasks:4},
 {id:3, icon:"🔗", title:"Ланцюг інфекції", tasks:3},
-{id:4, icon:"🫀", title:"Неінфекційні захворювання", tasks:4},
+{id:4, icon:"🫀", title:"Неінфекційні захворювання", tasks:3},
 {id:5, icon:"🧠", title:"Ментальне здоров'я", tasks:3},
 {id:6, icon:"📊", title:"Рівні профілактики", tasks:3},
 {id:7, icon:"🏆", title:"Самооцінювання", tasks:0}
@@ -1093,9 +1109,8 @@ document.getElementById(id).classList.remove("hidden");
 window.scrollTo({top: 0, behavior: "smooth"});
 }
 function showS4(id) {
-["s4Theory","s4t1","s4t2","s4t3","s4t4"].forEach(function(s) { var e = document.getElementById(s); if (e) e.classList.add("hidden"); });
+["s4Theory","s4t1","s4t2","s4t3"].forEach(function(s) { var e = document.getElementById(s); if (e) e.classList.add("hidden"); });
 document.getElementById(id).classList.remove("hidden");
-if (id === "s4t1") initNiz();
 window.scrollTo({top: 0, behavior: "smooth"});
 }
 function showS5(id) {
@@ -1190,6 +1205,65 @@ f.innerHTML = "<strong>❌ Не зовсім.</strong> Спробуй ще ра�
 for (var k = 0; k < opts.length; k++) opts[k].classList.remove("correct","incorrect","disabled");
 }
 }
+
+// === НОВЕ: перевірка множинного вибору для кожної групи НІЗ ===
+function chkS4T1() {
+var groups = ["s4t1g1", "s4t1g2", "s4t1g3", "s4t1g4"];
+var allOk = true;
+var groupResults = [];
+for (var g = 0; g < groups.length; g++) {
+var gid = groups[g];
+var opts = document.querySelectorAll("#" + gid + " .option");
+var correctSelected = 0;
+var incorrectSelected = 0;
+var missedCorrect = 0;
+var totalCorrect = 0;
+for (var i = 0; i < opts.length; i++) {
+var isCorrect = opts[i].dataset.correct === "true";
+var isSelected = opts[i].classList.contains("selected");
+if (isCorrect) totalCorrect++;
+if (isSelected && isCorrect) correctSelected++;
+else if (isSelected && !isCorrect) incorrectSelected++;
+else if (!isSelected && isCorrect) missedCorrect++;
+}
+var groupOk = (correctSelected === totalCorrect && incorrectSelected === 0);
+if (!groupOk) allOk = false;
+groupResults.push({gid: gid, ok: groupOk});
+// Підсвічування
+for (var j = 0; j < opts.length; j++) {
+var sb = opts[j].dataset.correct === "true";
+var is = opts[j].classList.contains("selected");
+opts[j].classList.remove("correct", "incorrect");
+opts[j].classList.add("disabled");
+if (sb && is) opts[j].classList.add("correct");
+else if (!sb && is) opts[j].classList.add("incorrect");
+else if (sb && !is) opts[j].classList.add("incorrect"); // пропущені правильні
+}
+}
+var f = document.getElementById("s4t1f");
+if (!f) return;
+f.style.display = "block";
+if (allOk) {
+f.className = "feedback feedback-success";
+f.innerHTML = "<strong>✅ Чудово!</strong> Усі чинники захисту для кожної групи визначено правильно!";
+addC("step4_task1");
+showToast("Завдання виконано!", "🎉");
+} else {
+var wrongGroups = [];
+for (var k = 0; k < groupResults.length; k++) {
+if (!groupResults[k].ok) wrongGroups.push("Група " + (k+1));
+}
+f.className = "feedback feedback-error";
+f.innerHTML = "<strong>❌ Не зовсім.</strong> Помилки в: " + wrongGroups.join(", ") + ". <br>💡 Червоним позначено неправильні варіанти та пропущені правильні. Спробуй ще раз.";
+setTimeout(function() {
+var allOpts = document.querySelectorAll("#s4t1 .option");
+for (var m = 0; m < allOpts.length; m++) {
+allOpts[m].classList.remove("correct", "incorrect", "disabled", "selected");
+}
+}, 3500);
+}
+}
+
 function toggleAccordion(header) {
 var item = header.parentElement;
 var isActive = item.classList.contains("active");
@@ -1208,7 +1282,7 @@ if (qidCount >= expected) {
 f.className = "feedback feedback-success";
 f.innerHTML = "<strong>✅ Чудово!</strong> Ти розібрався/лась у темі!";
 var taskId = "";
-if (prefix === "s4t4") taskId = "step4_task4";
+if (prefix === "s4t3") taskId = "step4_task3";
 if (prefix === "s6t2") taskId = "step6_task2";
 addC(taskId);
 showToast("Завдання виконано!", "🎉");
@@ -1282,7 +1356,6 @@ f.className = "feedback feedback-warning";
 f.innerHTML = "💡 Відповідай на всі питання (" + ok + "/" + total + "), щоб завершити завдання.";
 }
 }
-
 // === Chain simulator ===
 var brokenCount = 0;
 function breakChain(el) {
@@ -1314,7 +1387,6 @@ brokenCount = 0;
 var fb = document.getElementById("chainFeedback");
 if (fb) { fb.style.display = "none"; }
 }
-
 // === Infect drag-drop (step 2 task 1) ===
 var infectData = [
 {text:"🤝 Контакт із хворою людиною", infect:true},
@@ -1431,124 +1503,6 @@ f.className = "feedback feedback-error";
 f.innerHTML = "<strong>❌ Не зовсім правильно.</strong> Пам'ятай: контакт, відсутність щеплень, гігієна, забруднена вода, скупчення — ризик інфекції. Малорухливість, харчування, спадковість — ризик НІЗ.";
 }
 }
-
-// === NIZ drag-drop (step 4 task 1) ===
-var nizData = [
-{order:1, text:"🚭 Відмова від сигарет і вейпів"},
-{order:2, text:"🥗 Збалансоване харчування"},
-{order:3, text:"🏃 Регулярна фізична активність"},
-{order:4, text:"🩺 Профілактичні огляди"}
-];
-function initNiz() {
-var bank = document.getElementById("nizBank");
-if (!bank) return;
-var cards = bank.querySelectorAll(".dnd-card");
-for (var i = 0; i < cards.length; i++) cards[i].remove();
-var shuffled = nizData.slice().sort(function() { return Math.random() - 0.5; });
-for (var j = 0; j < shuffled.length; j++) {
-var s = shuffled[j];
-var card = document.createElement("div");
-card.className = "dnd-card";
-card.draggable = true;
-card.dataset.order = s.order;
-card.innerHTML = '<span class="dnd-card-icon">🔄</span><span class="dnd-card-text">' + s.text + '</span>';
-card.addEventListener("dragstart", function(ev) { ev.dataTransfer.setData("text","niz"); selNiz = this; });
-setupTouchDragNiz(card);
-card.onclick = function() {
-if (selNiz === this) { selNiz.style.outline = ""; selNiz = null; }
-else { if (selNiz) selNiz.style.outline = ""; selNiz = this; this.style.outline = "3px solid var(--warning)"; }
-};
-bank.appendChild(card);
-}
-var slots = document.querySelectorAll("#nizTarget .dnd-slot");
-for (var k = 0; k < slots.length; k++) {
-slots[k].classList.remove("filled");
-var ph = slots[k].querySelector(".dnd-slot-placeholder");
-if (ph) ph.style.display = "";
-slots[k].addEventListener("dragover", function(ev) { ev.preventDefault(); this.classList.add("drag-over"); });
-slots[k].addEventListener("dragleave", function() { this.classList.remove("drag-over"); });
-slots[k].addEventListener("drop", function(ev) { ev.preventDefault(); this.classList.remove("drag-over"); if (selNiz) placeNiz(this, selNiz); });
-}
-var f = document.getElementById("s4t1f");
-if (f) f.style.display = "none";
-}
-function setupTouchDragNiz(card) {
-var startX, startY, initialX, initialY, isDragging = false;
-card.addEventListener("touchstart", function(e) {
-isDragging = true;
-var touch = e.touches[0];
-startX = touch.clientX; startY = touch.clientY;
-var rect = card.getBoundingClientRect();
-initialX = rect.left; initialY = rect.top;
-card.classList.add("touch-active");
-card.style.position = "fixed";
-card.style.left = initialX + "px";
-card.style.top = initialY + "px";
-card.style.width = rect.width + "px";
-selNiz = card;
-}, {passive: true});
-card.addEventListener("touchmove", function(e) {
-if (!isDragging) return;
-e.preventDefault();
-var touch = e.touches[0];
-card.style.left = (initialX + touch.clientX - startX) + "px";
-card.style.top = (initialY + touch.clientY - startY) + "px";
-}, {passive: false});
-card.addEventListener("touchend", function(e) {
-if (!isDragging) return;
-isDragging = false;
-card.classList.remove("touch-active");
-card.style.position = ""; card.style.left = ""; card.style.top = ""; card.style.width = "";
-var touch = e.changedTouches[0];
-var slots = document.querySelectorAll("#nizTarget .dnd-slot");
-for (var i = 0; i < slots.length; i++) {
-var rect = slots[i].getBoundingClientRect();
-if (touch.clientX >= rect.left && touch.clientX <= rect.right && touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
-placeNiz(slots[i], card);
-break;
-}
-}
-});
-}
-function dropNizHere(slot) {
-if (selNiz) { placeNiz(slot, selNiz); selNiz.style.outline = ""; selNiz = null; }
-}
-function placeNiz(slot, card) {
-if (slot.classList.contains("filled")) {
-var ex = slot.querySelector(".dnd-card");
-if (ex) document.getElementById("nizBank").appendChild(ex);
-}
-var ph = slot.querySelector(".dnd-slot-placeholder");
-if (ph) ph.style.display = "none";
-slot.appendChild(card);
-slot.classList.add("filled");
-card.style.outline = "";
-}
-function resetNiz() { initNiz(); showToast("Перемішано!", "🔄"); }
-function chkNiz() {
-var f = document.getElementById("s4t1f");
-if (!f) return;
-f.style.display = "block";
-var slots = document.querySelectorAll("#nizTarget .dnd-slot");
-var filled = 0;
-for (var i = 0; i < slots.length; i++) { if (slots[i].classList.contains("filled")) filled++; }
-if (filled < 4) { f.className = "feedback feedback-warning"; f.innerHTML = "💡 Розмісти усі 4 картки у слотах!"; return; }
-var ok = true;
-for (var j = 0; j < slots.length; j++) {
-var card = slots[j].querySelector(".dnd-card");
-if (card && parseInt(card.dataset.order) !== parseInt(slots[j].dataset.pos)) ok = false;
-}
-if (ok) {
-f.className = "feedback feedback-success";
-f.innerHTML = "<strong>✅ Чудово!</strong> Універсальні кроки профілактики НІЗ засвоєно!";
-addC("step4_task1");
-showToast("Завдання виконано!", "🎉");
-} else {
-f.className = "feedback feedback-error";
-f.innerHTML = "<strong>❌ Не зовсім правильно.</strong> Пам'ятай: 1) відмова від сигарет/вейпів, 2) збалансоване харчування, 3) фізична активність, 4) профілактичні огляди.";
-}
-}
-
 function rate(si, r) {
 state.sr[si - 1] = r;
 saveP();
@@ -1562,7 +1516,7 @@ else stars[i].classList.remove("active");
 }
 function resetProgress() {
 if (confirm("Почати спочатку? Весь прогрес буде скинуто.")) {
-localStorage.removeItem("s20v2");
+localStorage.removeItem("s20v3");
 location.reload();
 }
 }
